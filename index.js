@@ -34,14 +34,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app
-  .listen(port)
-  .then(() => {
-    console.log("listening on port " + port);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+app.listen(port, () => {
+  console.log("listening on port", port);
+});
 
 // ROUTER CONFIGURATION
 app.use("/authentication", authentication);
